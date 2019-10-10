@@ -11,30 +11,40 @@ package cse360assign2;
 
 
 		public class AddingMachine {
-			
 
 			private int total;
-			public AddingMachine  () {
+			private String History;
+			
+			public AddingMachine  () //keeps the tab on total and is for initialization.
+			{
 				total = 0;  // not needed - included for clarity
-				
+				History = "0";
 			}
-			public int getTotal () {
-				return 0;
+			public int getTotal () //returns the total value
+			{
+				return total;
 				}
-			public void add (int value) {
-				
+			public void add (int value) //The adding function
+			{
+				total = value + total;
+				History = History + " + " + value;
 			}
 			
-			public void subtract (int value) {
-				
+			public void subtract (int value) //The subtract function
+			{
+				total = total - value;
+				History = History + " - " + value;
 			}
 			
-			public String toString () {
-			 	return "";
+			public String toString () //returns the history of operations.
+			{
+			 	return History;
 			}
 		
-			public void clear() {
-				
+			public void clear() //The clear function 
+			{
+				total = 0;
+				History = "0";
 			}
 		}
 	
